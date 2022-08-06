@@ -35,5 +35,22 @@ function drawAGrid(numberOfsquares){
 }
 drawAGrid(16);
 
+const btn = document.querySelector('button');
+btn.addEventListener('click', function(){
+    let invalidInput = true;
+    while(invalidInput){
+        let numberOfsquares = parseInt(prompt('Please Enter a number between 2 and 100'));
+        if((numberOfsquares>=2)&&(numberOfsquares<=100)){
+            const Body = document.querySelector('body');
+            const parentContainer = document.querySelector('.parent-container')
+            Body.removeChild(parentContainer)
+            drawAGrid(numberOfsquares);
+            invalidInput = false;
+        }
+        else {
+            alert('please enter a number within the specified range')
+        }
+    }
+})
 
 
